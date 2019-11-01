@@ -5,6 +5,7 @@ using UnityEngine;
 public class MyScript : MonoBehaviour
 {
     private int myNumber;
+    public GameObject myGameobject;
 
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,8 @@ public class MyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Move the object forward along its z axis 1 unit/second.
-        Vector3 positionDelta = new Vector3(Random.Range(-.1f, .1f), Random.Range(-.1f, .1f), Random.Range(-.1f, .1f));
-        transform.Translate(positionDelta);
+        // Move the object in a circle
+        transform.position = new Vector3(Mathf.Sin(10f*Time.time), Mathf.Cos(10f*Time.time), 0);
+
     }
 }
